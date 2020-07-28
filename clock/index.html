@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Analog and Digital Clock</title>
+</head>
+
+<body>
+    <div class="clocks">
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+
+        </div>
+    </div>
+    <div class="digitalclock">
+        <div id="digi"></div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        const hr = document.getElementsByClassName("hour")[0];
+        const mn = document.getElementsByClassName("min")[0];
+        const sc = document.getElementsByClassName("sec")[0];
+        const digi = document.getElementById("digi")
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * 6;
+            let ss = day.getSeconds() * 6;
+            let hhs = day.getHours();
+            let mms = day.getMinutes();
+            let sss = day.getSeconds();
+            if(hhs<10)
+                hhs='0'+hhs;
+            if(mms<10)
+                mms='0'+mms;
+            if(sss<10)
+                sss='0'+sss;
+            hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+            digi.innerText = hhs + " : " + mms + " : " + sss;
+        })
+    </script>
+
+</body>
+
+</html>

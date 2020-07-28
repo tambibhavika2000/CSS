@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+}
+.clock{
+    background: url('clock.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;  
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.1),
+                inset 0 -15px 15px rgba(255,255,255,0.1),
+                0 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+}
+.clocks{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#digi{
+    width: 450px;
+    height:100px;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.1),
+                inset 0 -15px 15px rgba(255,255,255,0.1),
+                0 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+    font-size: 50px;
+    padding: 13px;
+    margin: 50px;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    /* background-color: papayawhip; */
+}
+.clock::before{
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: powderblue;
+    z-index: 9999;
+    border-radius: 50%;
+}
+.hour,.min,.sec{
+    position: absolute;
+
+}
+.hr{
+    width: 150px;
+    height: 150px;
+}
+.hour{
+    width: 150px;
+    height: 150px;
+    /* transform: rotate(60deg); */
+}
+.min,.mn{
+    width: 180px;
+    height: 180px;
+}
+.sec,.sc{
+    height: 200px;
+    width: 200px;
+}
+.hr,.mn,.sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+   
+}
+.hr::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 80px;
+    background-color:palevioletred;
+}
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: white;
+}
+.sc::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background-color:powderblue;
+}
+.digitalclock{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
